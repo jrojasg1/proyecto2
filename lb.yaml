@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-production 
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - reto3.ingjuian.xyz
+      secretName: reto3-ingjuian-xyz-tls
+  rules:
+    - host: reto3.ingjuian.xyz
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wordpress
+                port:
+                  number: 80
