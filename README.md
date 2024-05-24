@@ -59,3 +59,6 @@ kubectl apply -f wordpress.yaml
 kubectl apply -f issuer.yaml
 kubectl apply -f lb.yaml
 ```
+## Visualización en youtube:
+
+link: https://youtu.be/Z_MSOZphCIA
